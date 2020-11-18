@@ -10,5 +10,6 @@ public class aluna {
     
     public static void main(String[] args) {
         System.out.println("Caroline Silva dos Santos");
+        System.out.println("Beatriz Rezende da Silva");
     }
 }
