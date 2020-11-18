@@ -13,5 +13,6 @@ package main;
 public class aluna2 {
     public static void main(String[] args) {
         System.out.println("Beatriz Rezende da Silva");
+        System.out.println("Caroline Silva dos Santos");
     }
 }
