@@ -3,9 +3,10 @@
     <type>org.netbeans.modules.java.j2seproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
-            <name>Projeto4bi</name>
+            <name>ProjetoFinal4Bim</name>
             <source-roots>
                 <root id="src.dir"/>
+                <root id="src.relatorios.dir"/>
             </source-roots>
             <test-roots/>
         </data>
