@@ -87,8 +87,29 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
+                  <Component id="masterScrollPane" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="idPedidoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="nomeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="mesaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="clienteidClienteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cozinheiroidCozinheiroLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="idPedidoField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nomeField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="mesaField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jComboBox1" max="32767" attributes="0"/>
+                          <Component id="jComboBox2" alignment="1" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                       <Component id="newButton" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="deleteButton" linkSize="1" min="-2" max="-2" attributes="0"/>
@@ -96,29 +117,6 @@
                       <Component id="refreshButton" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="saveButton" linkSize="1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="idPedidoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nomeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mesaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="clienteidClienteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cozinheiroidCozinheiroLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="idPedidoField" alignment="0" pref="376" max="32767" attributes="0"/>
-                                  <Component id="nomeField" alignment="0" pref="376" max="32767" attributes="0"/>
-                                  <Component id="mesaField" alignment="0" pref="376" max="32767" attributes="0"/>
-                                  <Component id="jComboBox1" max="32767" attributes="0"/>
-                                  <Component id="jComboBox2" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="masterScrollPane" pref="434" max="32767" attributes="0"/>
-                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -155,12 +153,13 @@
                   <Component id="cozinheiroidCozinheiroLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="1"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="saveButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="refreshButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="newButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
@@ -354,6 +353,14 @@
         <BindingProperty name="selectedItem" source="masterTable" sourcePath="${selectedElement.cozinheiro}" target="jComboBox2" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
         <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="jComboBox2" targetPath="enabled" updateStrategy="0" immediately="false"/>
       </BindingProperties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Relatorio"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
