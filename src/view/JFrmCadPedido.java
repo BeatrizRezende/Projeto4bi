@@ -6,13 +6,14 @@
 
 package view;
 
+
+import bd.Conexao;
 import java.awt.EventQueue;
 import java.beans.Beans;
 import java.util.ArrayList;
-
+import java.util.HashMap;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Map;
 import javax.persistence.RollbackException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -21,6 +22,7 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperViewer;
+
 
 /**
  *
@@ -69,6 +71,7 @@ public class JFrmCadPedido extends JPanel {
         jComboBox1 = new javax.swing.JComboBox();
         jComboBox2 = new javax.swing.JComboBox();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         FormListener formListener = new FormListener();
 
@@ -153,6 +156,9 @@ public class JFrmCadPedido extends JPanel {
         jButton2.setText("Relatorio");
         jButton2.addActionListener(formListener);
 
+        jButton1.setText("Relatorio 2");
+        jButton1.addActionListener(formListener);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -177,7 +183,9 @@ public class JFrmCadPedido extends JPanel {
                             .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton2)
-                        .addGap(59, 59, 59)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(newButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(deleteButton)
@@ -221,7 +229,8 @@ public class JFrmCadPedido extends JPanel {
                     .addComponent(refreshButton)
                     .addComponent(deleteButton)
                     .addComponent(newButton)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jButton1))
                 .addContainerGap())
         );
 
@@ -247,6 +256,9 @@ public class JFrmCadPedido extends JPanel {
             }
             else if (evt.getSource() == jButton2) {
                 JFrmCadPedido.this.jButton2ActionPerformed(evt);
+            }
+            else if (evt.getSource() == jButton1) {
+                JFrmCadPedido.this.jButton1ActionPerformed(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
@@ -304,7 +316,7 @@ public class JFrmCadPedido extends JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
-        JRBeanCollectionDataSource dados = new JRBeanCollectionDataSource(listCliente, false);
+        JRBeanCollectionDataSource dados = new JRBeanCollectionDataSource(list, false);
         try {
             JasperPrint relatorio = JasperFillManager.fillReport("./relatorios/relatorio_pedidos.jasper", null, dados);
             JasperViewer visualizador = new JasperViewer(relatorio, false);
@@ -315,6 +327,22 @@ public class JFrmCadPedido extends JPanel {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here
+        
+        Map<String, Object> parametros = new HashMap<>();
+        parametros.put("param_nome", "%L%");
+        try {
+            JasperPrint relatorio = JasperFillManager.fillReport("./relatorios/relatorio_pedidos2.jasper", parametros, Conexao.getConexao());
+            JasperViewer visualizador = new JasperViewer(relatorio, false);
+            visualizador.setVisible(true);
+        }catch(JRException ex){
+            System.out.println("Erro " + ex.getMessage());
+
+        }
+       
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel clienteidClienteLabel;
@@ -323,6 +351,7 @@ public class JFrmCadPedido extends JPanel {
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JTextField idPedidoField;
     private javax.swing.JLabel idPedidoLabel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
