@@ -29,6 +29,12 @@ import javax.persistence.Transient;
  */
 @Entity
 @Table(name = "cozinheiro", catalog = "bd_restaurante", schema = "")
+@NamedQueries({
+    @NamedQuery(name = "Cozinheiro.findAll", query = "SELECT c FROM Cozinheiro c"),
+    @NamedQuery(name = "Cozinheiro.findByIdCozinheiro", query = "SELECT c FROM Cozinheiro c WHERE c.idCozinheiro = :idCozinheiro"),
+    @NamedQuery(name = "Cozinheiro.findByNome", query = "SELECT c FROM Cozinheiro c WHERE c.nome = :nome"),
+    @NamedQuery(name = "Cozinheiro.findByTipoDaComida", query = "SELECT c FROM Cozinheiro c WHERE c.tipoDaComida = :tipoDaComida"),
+    @NamedQuery(name = "Cozinheiro.findByPedido", query = "SELECT c FROM Cozinheiro c WHERE c.pedido = :pedido")})
 public class Cozinheiro implements Serializable {
     @Transient
     private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
