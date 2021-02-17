@@ -331,9 +331,9 @@ public class JFrmCadPedido extends JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
-        JRBeanCollectionDataSource dados = new JRBeanCollectionDataSource(listCliente, false);
+        JRBeanCollectionDataSource dados = new JRBeanCollectionDataSource(list, false);
         try {
-            JasperPrint relatorio = JasperFillManager.fillReport("./relatorios/relatorio_pedidos.jasper", null, dados);
+            JasperPrint relatorio = JasperFillManager.fillReport("./relatorios/relatorio_pedidos2.jasper", null, dados);
             JasperViewer visualizador = new JasperViewer(relatorio, false);
             visualizador.setVisible(true);
         }catch(JRException ex){

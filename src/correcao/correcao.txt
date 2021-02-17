@@ -1,0 +1,19 @@
+Nota bimestral: 6.9 pontos
+
+Faltou definir a classe principal do programa (Splash)
+Menu Cadastros - Cliente não tinha código para chamar o formuário de cadastro
+Menu Relatórios - Cozinheiro: abre o formulário de cadastro de clientes
+Menu Relatórios - Pedido e Pedido2: Não faz nada.
+Formulário Cliente não foi traduzido os botões
+Formulário de Cozinheiro não estava centralizado, não possuia título e os botões não foram traduzidos (layout padrão do netbeans). Formulário fechava o programa ao ser finalizado.
+Formulário Diario de Pedido: Botões não traduzidos. Não centralizado.Relatório desse formulário não funcionou, não encontrou o campo cliente.nome, não usou a lista correta para preenher o relatório. Fecha o programa ao fechar o formulário.
+Modelo de banco de dados incorreto (modelagem). Qual a finalidade do atributo nome na tabela de pedido?
+O render foi criado e aplicado, mas não tem utilidade, pois o valor da coluna é string e a renderização criada é aplicada apenas para tipos date.
+
+
+
+Relatorio de cozinheiro blank. Criado mas não foi exibido via código
+relatorio cliente wizard. Criado mas não foi exibido no código.
+Relatorio de cozinheiro - param não funcionou, não foi encontrado o campo cozinheiro.Nome
+
+
